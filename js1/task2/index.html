@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+</head>
+
+<body>
+    <pre>
+    var aqiData = [
+            ["北京", 90],
+            ["上海", 50],
+            ["福州", 10],
+            ["广州", 50],
+            ["成都", 90],
+            ["西安", 100]
+        ];
+    </pre>
+    <p>遍历读取aqiData中各个城市的数据, 将空气质量指数大于60的城市显示到aqi-list的列表中</p>
+    <h3>样例</h3>
+    <ul>
+        <li>第一名: 福州, 10</li>
+        <li>第二名: 福州, 10</li>
+        <li>第三名: 福州, 10</li>
+    </ul>
+    <h3>污染城市列表(将结果显示在下方)</h3>
+    <ul id="aqi-list">
+        <!-- <li>.....</li> -->
+    </ul>
+    <script type="text/javascript">
+    var aqiData = [
+        ["北京", 90],
+        ["上海", 50],
+        ["福州", 10],
+        ["广州", 50],
+        ["成都", 90],
+        ["西安", 100]
+    ];
+
+    // 方法一, 最笨的
+    // (function() {
+
+    //     /*
+    //     在注释下方编写代码
+    //     遍历读取aqiData中各个城市的数据
+    //     将空气质量指数大于60的城市显示到aqi-list的列表中
+    //     */
+    //     // 排序函数
+    //     function mySort(a, b) {
+    //         return a[1] - b[1];
+    //     }
+    //     var len = aqiData.length;
+    //     // 将符合条件的数据提取到这个数组
+    //     var arr1 = [];
+    //     var arr2 = ["第一名: ", "第二名: ", "第三名: ", "第四名: ", "第五名: ", "第六名: "];
+    //     var ul = document.getElementById('aqi-list');
+    //     // 遍历原始数据并提取同时排序
+    //     for (var i = 0; i < len; i++) {
+    //         if (aqiData[i][1] > 60) {
+    //             arr1.push(aqiData[i]);
+    //         }
+    //         arr1.sort(mySort);
+    //     }
+    //     // 输出
+    //     for (var j = 0; j < arr1.length; j++) {
+    //         var li = document.createElement("li");
+    //         li.textContent = arr2[j] + arr1[j][0] + ", " + arr1[j][1];
+    //         ul.appendChild(li);
+    //     }
+    // })();
+
+    // 方法二
+    (function() {
+        // 要传入sort()的排序函数
+        function mySort(a, b) {
+            return b[1] - a[1];
+        }
+        // 要传入filter()的筛选函数
+        function isTrue(item, index, array) {
+            return item[1] > 60;
+        }
+        var ul = document.getElementById("aqi-list");
+        // 将晒选结果排序后赋值给arr1
+        var arr1 = aqiData.filter(isTrue).sort(mySort);
+        var arr2 = ["第一名: ", "第二名: ", "第三名: ", "第四名: ", "第五名: ", "第六名: "];
+        var fragment = document.createDocumentFragment();
+
+        // 下面这段代码的第一种方法
+        // for (var i = 0; i < arr1.length; i++) {
+        //     var li = document.createElement("li");
+        //     li.textContent = arr2[i] + arr1[i][0] + ", " + arr1[i][1];
+        //     fragment.appendChild(li);
+        // }
+        // ul.appendChild(fragment);
+
+        // 第二种 将forEach 换成map 也可以
+        arr1.forEach(function (item, index, array) {
+            var li = document.createElement("li");
+            li.textContent = arr2[index] + array[index][0] + ", " + array[index][1];
+            fragment.appendChild(li);
+        });
+        ul.appendChild(fragment);
+    })();
+    </script>
+</body>
+
+</html>

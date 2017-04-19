@@ -1,0 +1,227 @@
+body, h1, h2, h3, h4, p, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Microsoft Yahei";
+  font-size: 12px;
+  width: 100%;
+}
+a {
+    text-decoration: none;
+}
+.clearfix::after {
+    content:"";
+    display:block;
+    clear:both;
+}
+
+/*头部*/
+header {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #2189c0;
+    padding: 11px 70px 11px 50px;
+}
+header .logo {
+    width: 36px;
+    height: 36px;
+    background-color: #fff;
+    position: relative;
+    display: inline-block;
+}
+header .logo::before {
+    content: " ";
+    display: block;
+    height: 15px;
+    width: 15px;
+    border-top: 3px solid #2189c0;
+    border-left: 3px solid #2189c0;
+    background: #fff;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+header .register {
+    float: right;
+    padding-top: 6px;
+}
+header .register input {
+    height: 26px;
+    width: 280px;
+    padding-left: 36px;
+    border: none;
+    border-radius: 13px;
+    background: #fff url("search.png") no-repeat 10px center;
+}
+header .register a {
+    display: inline-block;
+    padding-left: 17px;
+    margin-left: 20px;
+    background: url("personal.png") no-repeat left center;
+    color: #fff;
+}
+
+main {
+    background: #eeeeed;
+}
+
+/*侧边栏*/
+aside {
+    float: left;
+    width: 260px;
+    background: #2a2e3d;
+    padding-top: 18px;
+    box-sizing: border-box;
+    color: #b9babd;
+}
+aside div {
+    padding-left: 45px;
+}
+aside div span {
+    font-size: 16px;
+    display: inline-block;
+}
+aside div .personal {
+    color: #fff;
+}
+aside div .personal::before {
+    content: "";
+    display: inline-block;
+    width: 46px;
+    height: 46px;
+    background: #b9babd;
+    vertical-align: middle;
+    border-radius: 50%;
+    margin-right: 25px;
+    border: 5px solid #2a2e3d;
+    box-shadow: 0 0 0 2px #b9babd;
+}
+aside div div {
+    text-align: center;
+    width: 140px;
+    padding-left: 0;
+}
+aside div div span {
+    height: 30px;
+    padding: 15px;
+    padding-top: 0;
+    margin: 25px 0;
+}
+aside div div span:nth-child(1) {
+    border-right: 2px solid #313546;
+}
+aside ul {
+    list-style-type: none;
+}
+aside ul li {
+    padding: 30px;
+    padding-left: 75px;
+}
+aside ul li:nth-child(1) {
+    background: url(baobiao.png) no-repeat 45px center;
+}
+aside ul li:nth-child(2) {
+    background: url(xx.png) no-repeat 45px center;
+}
+aside ul li:nth-child(3) {
+    background: url(share.png) no-repeat 45px center;
+}
+aside ul li:nth-child(4) {
+    background: url(xx.png) no-repeat 45px center;
+}
+aside ul li:nth-child(5) {
+    background: url(xx.png) no-repeat 45px center;
+}
+aside ul li:nth-child(6) {
+    background: url(account.png) no-repeat 45px center;
+}
+
+
+/*主体*/
+.data {
+    margin-left: 260px;
+}
+.data .path {
+    background: #fff;
+    width: 100%;
+}
+
+.data > div, form {
+    width: 890px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 0 2px #dcdee0;
+}
+.data .box1 {
+    padding: 15px 0 15px 30px;
+}
+.data .box1 > div {
+    height: 60px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 30px;
+}
+.data .box1 input, select {
+    height: 26px;
+    margin-bottom: 5px;
+    line-height: 26px;
+    /*padding: 10px;*/
+}
+.data .box1 button {
+    margin-top: 15px;
+    background: #388ac1;
+    height: 26px;
+    width: 60px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+.data .box1 > div span {
+    margin-right: 10px;
+    color: #aaaaaa;
+}
+.data .box1 > div:nth-child(1) {
+    width: 120px;
+}
+.data .box1 > div:nth-child(1) select {
+    width: 70px;
+}
+.data .box1 > div:nth-child(2) {
+    width: 160px;
+    padding-right: 30px;
+    position: relative;
+}
+.data .box1 >div:nth-child(2) .huan {
+    background: url(huan.png) no-repeat center center;
+    position: absolute;
+    font-size: 14px;
+    right: -10px;
+    top: 10px;
+    display: block;
+    width: 28px;
+    height: 38px;
+    text-align: right;
+    line-height: 38px;
+    color: #fff;
+}
+.data .box1 > div:nth-child(2) select {
+    width: 120px;
+}
+.data .box1 > div:nth-child(3) {
+    width: 300px;
+}
+.data .box1 > div:nth-child(3) select {
+    width: 70px;
+}
+.data .box1 > div:nth-child(3) input {
+    width: 120px;
+    margin-right: 10px;
+}
+.data .box1 > div:nth-child(3) select:last-child {
+    width: 120px;
+}
+.data .box1 > div .lxc {
+    margin-left: 15px;
+}

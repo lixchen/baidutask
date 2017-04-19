@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    label {
+        display: block;
+        margin: 30px auto;
+        width: 500px;
+    }
+    
+    input {
+        outline: none;
+        width: 250px;
+        height: 50px;
+        border: none;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        margin: 0 20px;
+        padding-left: 15px;
+        font-size: 16px;
+    }
+    
+    input:focus {
+        border-color: #e00;
+    }
+    
+    a {
+        margin: 0 20px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #2f79ba;
+        display: inline-block;
+        width: 80px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 10px;
+    }
+    
+    p {
+        padding-left: 55px;
+    }
+    </style>
+</head>
+
+<body>
+    <label for="one">名称
+        <input id="one" type="text" name="">
+        <a id="lxc" href="#">验证</a>
+        <p id="p">必填,长度为4~16个字符</p>
+</body>
+
+</html>
+<script type="text/javascript">
+window.onload = function() {
+    var input = document.getElementById("one").value;
+    var p = document.getElementById("p");
+    lxc.addEventListener("click", function() {
+        if (one.value === "") {
+            p.innerHTML = "名称不能为空";
+        } else if (one.value.length > 16 || one.value.length < 4) {
+            p.innerHTML = "请输入正确的名称";
+        } else {
+            p.innerHTML = "名称正确";
+        }
+        return false;
+    });
+};
+</script>

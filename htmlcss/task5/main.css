@@ -1,0 +1,164 @@
+body, h1, h2, h3, h4{
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 20px;
+	line-height: 3em;
+}
+h2 {
+	font-size: 16px;
+	line-height: 1.4em;
+	color: #9d9d9d;
+}
+p {
+	font-family: "黑体";
+	font-size: 16px;
+	text-indent: 2em;
+	line-height: 1.4em;
+}
+.message {
+	font-size: 12px;
+	color: #9d9d9d;
+	text-indent: 0;
+}
+body {
+	background-color: #DEDEDE;
+}
+
+header {
+	background: #333333;
+	overflow: hidden;
+}
+header h1 {
+	margin: 10px 0 10px 40px;
+	float: left;
+	text-indent: -9999px;
+}
+header h1 a {
+	display: block;
+	height: 37px;
+	width: 118px;
+	background: url(logo.jpg) no-repeat;
+}
+header nav {
+	float: right;
+}
+header ul {
+	overflow: hidden;
+}
+header nav li {
+	float: left;
+	margin: 0 15px;
+}
+header nav li a {
+	text-decoration: none;
+	color: #fee;
+}
+header nav li:last-child a {
+	color: #9d9d9d;
+}
+
+article, aside, #image {
+	box-sizing: border-box;
+	background: #fff;
+	margin: 20px;
+	box-shadow: 2px 2px 3px #9b9b9b;
+	padding: 20px 25px;
+}
+article, #image {
+	margin-right: 440px;
+}
+article ul {
+	list-style: none;
+}
+
+#image div {
+	margin-left: 20px;
+	margin-top: 20px;
+	width: max-content;
+	padding: 15px;
+	border: 1px solid #ddd;
+	text-align: center;
+	float: left;
+}
+#image div img {
+	width: 100px;
+	display: block;
+}
+
+article ol {
+	font-weight: 600;
+}
+table {
+	width: 100%;
+	border-collapse: collapse;
+	text-indent: 5px;
+}
+table thead {
+	text-align: left;
+	background-color: #333;
+	color: #fff;
+}
+table th, td {
+	border: 1px solid #ddd;
+}
+table tfoot {
+	background: #ddd;
+	font-weight: 600;
+}
+
+aside {
+	width: 400px;
+	position: absolute;
+	right: 0;
+	top: 58px;
+}
+aside h2 {
+	line-height: 40px;
+	border-left: 3px solid #ddd;
+	color: #000;
+	padding-left: 20px;
+}
+aside form div {
+	margin: 0 auto;
+	position: relative;
+	margin-bottom: 30px;
+}
+aside form div:before, div:after {
+	display: table;
+	content: "";
+	clear: both;
+}
+aside form div label, input,span,select,textarea {
+	float: left;
+}
+.lxc {
+	text-align: right;
+	width: 120px;
+	padding-right: 20px;
+}
+aside form div p {
+	position: absolute;
+	left: 120px;
+	top: 10px;
+	color: #ddd;
+}
+aside form button {
+	width: 100%;
+	background: #3355d0;
+	border: none;
+	color: #fff;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: 20px;
+	border-radius: 5px;
+}
+
+footer {
+	width: 100%;
+	background-color: #000;
+	color: #fff;
+	text-align: center;
+	overflow: hidden;
+}
