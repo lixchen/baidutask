@@ -1,68 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>js task4</title>
-	<style type="text/css">
-		#wrapper {
-			width: max-content;
-			margin: 50px auto;
-			max-width: 500px;
-		}
-		button:nth-of-type(3) {
-			margin-left: 20px;
-		}
-		#wrapper div {
-			margin-top: 20px;
-		}
-		#wrapper div span {
-			display: inline-block;
-			background: #e00;
-			color: #fff;
-			padding: 10px;
-			line-height: 16px;
-			margin-right: 10px;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <title>js task4</title>
+    <style type="text/css">
+    #wrapper {
+        width: max-content;
+        margin: 50px auto;
+        max-width: 500px;
+    }
+    
+    button:nth-of-type(3) {
+        margin-left: 20px;
+    }
+    
+    #wrapper div {
+        margin-top: 20px;
+    }
+    
+    #wrapper div span {
+        display: inline-block;
+        background: #e00;
+        color: #fff;
+        padding: 10px;
+        line-height: 16px;
+        margin-right: 10px;
+    }
+    </style>
 </head>
+
 <body>
-<div id="wrapper">
-	<input type="text" id="input">
-	<button id="leftIn">左侧入</button>
-	<button id="rightIn">右侧入</button>
-	<button id="leftOut">左侧出</button>
-	<button id="rightOut">右侧出</button>
+    <div id="wrapper">
+        <input type="text" id="input">
+        <button id="leftIn">左侧入</button>
+        <button id="rightIn">右侧入</button>
+        <button id="leftOut">左侧出</button>
+        <button id="rightOut">右侧出</button>
+        <div id="box">
+        </div>
+    </div>
+    <script type="text/javascript">
+    var wrapper = document.querySelector("#wrapper");
+    var input = wrapper.querySelector("#input");
+    var leftIn = wrapper.querySelector("#leftIn");
+    var rightIn = wrapper.querySelector("#rightIn");
+    var leftOut = wrapper.querySelector("#leftOut");
+    var rightOut = wrapper.querySelector("#rightOut");
+    var box = wrapper.querySelector("#box");
 
-	<div id="box">
-		
-	</div>
-</div>
-	
-<script type="text/javascript">
-	var wrapper = document.querySelector("#wrapper");
-	var input = wrapper.querySelector("#input");
-	var leftIn = wrapper.querySelector("#leftIn");
-	var rightIn = wrapper.querySelector("#rightIn");
-	var leftOut = wrapper.querySelector("#leftOut");
-	var rightOut = wrapper.querySelector("#rightOut");
-	var box = wrapper.querySelector("#box");
-	function btnEvent(event) {
-		var span = document.createElement("span");
-		span.textContent = input.value;
-		if (event.target.id === "leftIn") {
-			box.insertBefore(span, box.firstElementChild);
-		} else if (event.target.id === "rightIn") {
-			box.appendChild(span);
-		} else if (event.target.id === "leftOut") {
-			box.removeChild(box.firstElementChild);
-		} else if (event.target.id === "rightOut") {
-			box.removeChild(box.lastElementChild);
-		} else if (event.target.nodeName === "SPAN") {
-			box.removeChild(event.target);
-		}
-	}
-	wrapper.addEventListener("click", btnEvent);
-</script>	
-
+    function btnEvent(event) {
+        var span;
+        if (input.value === "" && (event.target.id === "leftIn" || event.target.id === "rightIn")) {
+            alert("Please wirte a Number!!!");
+        } else {
+            span = document.createElement("span");
+            span.textContent = input.value;
+            if (event.target.id === "leftIn") {
+                box.insertBefore(span, box.firstElementChild);
+            } else if (event.target.id === "rightIn") {
+                box.appendChild(span);
+            } else if (event.target.id === "leftOut") {
+                var outValue = box.firstElementChild.textContent;
+                box.removeChild(box.firstElementChild);
+                alert(outValue);
+            } else if (event.target.id === "rightOut") {
+                var outValue = box.lastElementChild.textContent;
+                box.removeChild(box.lastElementChild);
+                alert(outValue);
+            } else if (event.target.parentNode === box) {
+                box.removeChild(event.target);
+            }
+        }
+    }
+    wrapper.addEventListener("click", btnEvent);
+    </script>
 </body>
+
 </html>
